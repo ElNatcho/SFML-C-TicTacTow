@@ -11,14 +11,6 @@
 
 #define SAFE_DELETE(X) {if(X!=NULL){delete(X);}}
 
-//enum class PLAYER{NONE = 0, PLAYER_1 = 1, PLAYER_2 = 0};
-//
-//struct Box {
-//	sf::Sprite *Sprite;
-//	bool       *isSet;
-//	PLAYER      Owner;
-//};
-
 std::string playerToString(PLAYER player);
 
 void setupBackground(std::vector<std::vector<sf::RectangleShape*>*> *fieldMatrix);
@@ -229,16 +221,6 @@ void checkWinner(std::vector<std::vector<Box*>*> *fieldMatrix, bool *done) { //C
 		std::cout << ">" << playerToString(fieldMatrix->at(1)->at(1)->Owner) << " hat gewonnen." << std::endl;
 		*done = true;
 	}
-
-	/*for (int y = 0; y < fieldMatrix->size(); y++) 
-		for (int x = 0; x < fieldMatrix->at(y)->size(); x++) 
-			if (fieldMatrix->at(y)->at(x)->isSet) 
-				*tmpCount += 1;
-
-	if (*tmpCount == 9 && !done) {
-		std::cout << ">Unentschieden." << std::endl;
-		*done = true;
-	}*/
 
 }
 
